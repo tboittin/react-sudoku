@@ -33,16 +33,15 @@ function fillGrid(grid: GRID) {
       shuffle(numbers)
 
       for (let value of numbers) {
-        // is it not in grid row ?
         if (!isInRow({ grid, row, value })) {
           if (!isInCol({ grid, col, value })) {
             const square = identifySquare({ col, grid, row })
 
-            if (!isInSquare({ square, value }))
-              //
+            if (!isInSquare({ square, value })) {
               grid[row][col] = value
-            if (checkGrid(grid)) return true
-            else if (fillGrid(grid)) return true
+              if (checkGrid(grid)) return true
+              else if (fillGrid(grid)) return true
+            }
           }
         }
       }
