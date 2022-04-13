@@ -2,7 +2,7 @@ import identifyWorkingSquare from '.'
 
 import { GRID } from 'typings'
 
-describe('identify Square', () => {
+describe('identifySquare', () => {
   it('identifies the correct square with a given grid, row index and column index', () => {
     const grid: GRID = [
       [8, 4, 2, 6, 5, 1, 3, 9, 7],
