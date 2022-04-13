@@ -1,23 +1,12 @@
-import React, { FC, Children } from 'react'
+import { FC, Children } from 'react'
 import { GRID } from 'typings'
-import { fillGrid } from 'utils'
+import { createFullGrid } from 'utils'
 import Block from './block'
 
 import { Container, Row } from './styles'
 
 const Grid: FC = () => {
-  const grid: GRID = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0],
-  ]
-  fillGrid(grid)
+  const grid: GRID = createFullGrid()
   console.log(grid)
 
   return (
