@@ -7,9 +7,9 @@ interface IInput {
 }
 
 /**
- *
+ * A function to check if the value is already being used in the current grid column
  * @param input Object with 9x9 Sudoku Grid, row index and value
- * @returns true if the value is already being used in the current grid row
+ * @returns true if the value is already being used in the current grid column
  */
 function isInCol({ grid, col, value }: IInput): boolean {
   for (let i = 0; i < 9; i++) {

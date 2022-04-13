@@ -1,5 +1,6 @@
 import { GRID, NUMBERS } from 'typings'
 import { identifySquare, shuffle } from 'utils'
+import checkGrid from 'utils/check-grid'
 import { isInCol, isInRow, isInSquare } from 'utils/is-in'
 
 const gridExample: GRID = [
@@ -40,9 +41,8 @@ function fillGrid(grid: GRID) {
             if (!isInSquare({ square, value }))
               //
               grid[row][col] = value
-            // check grid if it is full
-            // if yes stop and return
-            // otherwise we run fillgrid again
+            if (checkGrid(grid)) return true
+            else if (fillGrid(grid)) return true
           }
         }
       }
