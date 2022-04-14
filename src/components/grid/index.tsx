@@ -1,9 +1,9 @@
 import { FC, Children, useEffect, useCallback } from 'react'
 import { useDispatch } from 'react-redux'
+import useMousetrap from 'react-hook-mousetrap'
 import { createGrid } from 'reducers/actions'
 import { AnyAction, Dispatch } from 'redux'
-import { GRID, INDEX } from 'typings'
-import { createFullGrid } from 'utils'
+import { INDEX } from 'typings'
 import Block from './block'
 
 import { Container, Row } from './styles'
@@ -15,9 +15,24 @@ const Grid: FC = () => {
     create()
   }, [create])
 
-  const grid: GRID = createFullGrid()
-  console.log(grid)
+  function moveDown() {
+    console.log('down')
+  }
+  function moveLeft() {
+    console.log('left')
+  }
+  function moveRight() {
+    console.log('right')
+  }
+  function moveUp() {
+    console.log('up')
+  }
 
+  useMousetrap('down', moveDown)
+  useMousetrap('left', moveLeft)
+  useMousetrap('right', moveRight)
+  useMousetrap('up', moveUp)
+  
   return (
     <Container data-cy="grid-container">
       {Children.toArray(
