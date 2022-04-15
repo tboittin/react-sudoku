@@ -2,6 +2,7 @@ import global from 'global'
 import { GRID } from 'typings'
 import copyGrid from 'utils/copy-grid'
 import getRandomIndex from 'utils/get-random-index'
+import solveGrid from 'utils/solve-grid'
 
 /**
  * Removes number from a full grid to create a sudoku puzzle
@@ -25,7 +26,7 @@ function removeNumbers(grid: GRID, attempts = 5): GRID {
 
     global.counter = 0
 
-    // attempt to solve the grid
+    solveGrid(gridCopy)
 
     if (global.counter !== 1) {
       grid[row][col] = backup
