@@ -35,6 +35,7 @@ function solveGrid(grid: GRID) {
           }
         }
       }
+      break
     }
   }
 
